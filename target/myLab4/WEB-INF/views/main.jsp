@@ -1,4 +1,5 @@
-<%--
+<%@ page import="my.lab.four.entity.Point" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: Igor
   Date: 09.01.2020
@@ -6,20 +7,32 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java"  isELIgnored="false" %>
 <html>
 <head>
     <title>Главная страница</title>
 </head>
 <body>
 <table>
+
     <tr>
         <td>Mail</td>
-        <td>${mail}</td>
+        <td>${user.mail}</td>
     </tr>
     <tr>
         <td>Password</td>
-        <td>${password}</td>
+        <td>${user.name}</td>
+    </tr>
+
+    <tr>
+        <td>x</td>
+        <td>${points.get(0).x}</td>
+        <td>${points.get(1).x}</td>
+    </tr>
+    <tr>
+        <td>y</td>
+        <td>${points.get(0).y}</td>
+        <td>${points.get(1).y}</td>
     </tr>
     <form:form method="post" action="addPoint">
         <tr>

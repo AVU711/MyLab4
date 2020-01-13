@@ -6,6 +6,8 @@ import my.lab.four.service.PointService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+
 @Service
 public class PointServiceImpl implements PointService {
 
@@ -17,4 +19,8 @@ public class PointServiceImpl implements PointService {
         return pointRepository.saveAndFlush(point);
     }
 
+    @Override
+    public ArrayList<Point> getAll() {
+        return (ArrayList<Point>) pointRepository.findAll();
+    }
 }

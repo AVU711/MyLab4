@@ -13,7 +13,7 @@
 </head>
 <body>
 <table>
-    <form:form method="post" action="login">
+    <form:form method="post" modelAttribute="users" action="login">
         <tr>
             <td>
                 <form:label path="mail">Mail</form:label>

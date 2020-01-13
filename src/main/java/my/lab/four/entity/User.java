@@ -1,8 +1,18 @@
 package my.lab.four.entity;
 
-public class User {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "users")
+public class User {
+    @Id
     private String mail;
+    @Column
+    private String name;
+    @Column
     private String password;
 
     public User() {
@@ -22,5 +32,13 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
