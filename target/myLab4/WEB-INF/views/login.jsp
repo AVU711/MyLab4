@@ -13,26 +13,27 @@
 </head>
 <body>
 <table>
-    <form:form method="post" modelAttribute="users" action="login">
+    <form:form method="post" modelAttribute="users" action="login/process">
         <tr>
             <td>
-                <form:label path="mail">Mail</form:label>
-            </td>
-            <td>
-                <form:input path="mail"/>
+                <form:label name="mail" path="mail">Mail</form:label>
+                <form:input name="mail" path="mail"/>
             </td>
         </tr>
         <tr>
             <td>
-                <form:label path="password">Password</form:label>
-                <form:input path="password"/>
+                <form:label name="password" path="password">Password</form:label>
+                <form:input name="password" path="password"/>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <input type="submit" value="Вход">
+                <input type="submit">
             </td>
         </tr>
+    </form:form>
+    <form:form action="registration" method="get">
+        <input type="submit" value="Регистрация"/>
     </form:form>
 </table>
 </body>
