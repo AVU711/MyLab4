@@ -33,4 +33,13 @@ public class myController {
         return "main";
     }
 
+    @RequestMapping(value = "/addPoint", method = RequestMethod.POST)
+    public String addPoint(@ModelAttribute Point point, Model model){
+        pointService.addPoint(point);
+        model.addAttribute("x",point.getX());
+        model.addAttribute("y", point.getY());
+        model.addAttribute("R", point.getR());
+        model.addAttribute("command", new Point());
+        return "main";
+    }
 }
