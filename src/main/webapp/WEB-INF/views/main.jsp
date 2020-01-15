@@ -14,26 +14,6 @@
 </head>
 <body>
 <table>
-
-    <tr>
-        <td>Mail</td>
-        <td>${user.mail}</td>
-    </tr>
-    <tr>
-        <td>Password</td>
-        <td>${user.name}</td>
-    </tr>
-
-    <tr>
-        <td>x</td>
-        <td>${points.get(0).x}</td>
-        <td>${points.get(1).x}</td>
-    </tr>
-    <tr>
-        <td>y</td>
-        <td>${points.get(0).y}</td>
-        <td>${points.get(1).y}</td>
-    </tr>
     <form:form method="post" action="addPoint">
         <tr>
             <td>Координата X</td>
@@ -47,6 +27,9 @@
                 <form:radiobutton path="x" value="3"/>
                 <form:radiobutton path="x" value="4"/>
                 <form:radiobutton path="x" value="5"/>
+            </td>
+            <td>
+                <form:errors path="x"/>
             </td>
         </tr>
         <tr>
@@ -74,5 +57,6 @@
         </tr>
     </form:form>
 </table>
+    <a href="logout">Logout</a>
 </body>
 </html>

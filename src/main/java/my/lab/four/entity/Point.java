@@ -14,13 +14,23 @@ public class Point {
     @GenericGenerator(name = "increment", strategy = "increment")
     private int id;
     @Column(name="x")
-    private double x;
+    private String x;
     @Column(name="y")
-    private double y;
+    private String y;
     @Column(name = "R")
-    private double R;
+    private String R;
+    @Column(name = "result")
+    private String result;
 
     public Point() {
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
     }
 
     public int getId() {
@@ -31,27 +41,27 @@ public class Point {
         this.id = id;
     }
 
-    public double getX() {
+    public String getX() {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(String x) {
         this.x = x;
     }
 
-    public double getY() {
+    public String getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(String y) {
         this.y = y;
     }
 
-    public double getR() {
+    public String getR() {
         return R;
     }
 
-    public void setR(double r) {
+    public void setR(String r) {
         R = r;
     }
 }

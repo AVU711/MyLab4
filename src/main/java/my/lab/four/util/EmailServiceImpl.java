@@ -15,13 +15,13 @@ public class EmailServiceImpl {
     @Autowired
     JavaMailSender javaMailSender;
 
-    public void sendPassword(String address){
+    public void sendGreeting(String address){
         SimpleMailMessage message = new SimpleMailMessage();
 
         message.setFrom("lexa200004@mail.ru");
         message.setTo(address);
-        message.setSubject("Регистрация");
-        message.setText("Ваш пароль : 1234");
+        message.setSubject("Оповещение");
+        message.setText("Нашу главную страницу кто-то посетил, ура!!!");
 
         javaMailSender.send(message);
     }

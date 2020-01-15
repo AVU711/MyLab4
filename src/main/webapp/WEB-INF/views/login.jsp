@@ -32,7 +32,7 @@
             </td>
         </tr>
     </form:form>
-    <form:form action="registration" method="get">
+    <form:form action="sign" method="get">
         <input type="submit" value="Регистрация"/>
     </form:form>
 </table>
