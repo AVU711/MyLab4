@@ -1,9 +1,12 @@
 package my.lab.four.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+import org.springframework.data.repository.cdi.Eager;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
@@ -16,6 +19,12 @@ public class User {
     private String password;
 
     public User() {
+    }
+
+    public User(String mail, String name, String password) {
+        this.mail = mail;
+        this.name = name;
+        this.password = password;
     }
 
     public String getMail() {

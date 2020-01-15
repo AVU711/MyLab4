@@ -13,22 +13,22 @@
 </head>
 <body>
 <table>
-    <form:form method="post" modelAttribute="users" action="login/process">
+    <form:form method="post" modelAttribute="user" action="login/process">
         <tr>
             <td>
-                <form:label name="mail" path="mail">Mail</form:label>
-                <form:input name="mail" path="mail"/>
+                <form:label path="mail">Mail</form:label>
+                <form:input path="mail"/>
             </td>
         </tr>
         <tr>
             <td>
-                <form:label name="password" path="password">Password</form:label>
-                <form:input name="password" path="password"/>
+                <form:label path="password">Password</form:label>
+                <form:input path="password"/>
             </td>
         </tr>
         <tr>
             <td colspan="2">
-                <input type="submit">
+                <input  type="submit">
             </td>
         </tr>
     </form:form>

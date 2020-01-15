@@ -7,8 +7,10 @@ import my.lab.four.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -21,6 +23,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUser(String string) {
-        return userRepository.getOne(string);
+        User user = userRepository.getOne(string);
+        User myUser = new User(user.getMail(), user.getName(), user.getPassword());
+        return myUser;
     }
 }

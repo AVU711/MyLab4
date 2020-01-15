@@ -1,5 +1,6 @@
 package my.lab.four.config;
 
+import my.lab.four.entity.User;
 import my.lab.four.security.AuthProviderImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
@@ -26,12 +27,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/login","/registration").anonymous()
+                .antMatchers("/login","/registration", "/").anonymous()
                 .antMatchers("/main").authenticated()
                 .and().csrf().disable()
                 .formLogin()
                 .loginPage("/login")
                 .loginProcessingUrl("/login/process")
+                .defaultSuccessUrl("/main")
                 .usernameParameter("mail")
                 .passwordParameter("password")
                 .and().logout();

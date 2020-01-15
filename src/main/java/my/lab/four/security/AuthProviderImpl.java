@@ -1,8 +1,9 @@
 package my.lab.four.security;
 
 import my.lab.four.entity.User;
-import my.lab.four.service.impl.UserServiceImpl;
+import my.lab.four.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,10 +17,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Component
+@ComponentScan("my.lab.four")
 public class AuthProviderImpl implements AuthenticationProvider {
 
     @Autowired
-    private UserServiceImpl userService;
+    private UserService userService;
 
     @Override
     public Authentication authenticate(Authentication authentication) throws AuthenticationException {
@@ -38,6 +40,6 @@ public class AuthProviderImpl implements AuthenticationProvider {
 
     @Override
     public boolean supports(Class<?> aClass) {
-        return false;
+        return aClass.equals(UsernamePasswordAuthenticationToken.class);
     }
 }
